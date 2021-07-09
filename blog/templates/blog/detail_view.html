@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock title %}
+
+{% block body %}
+
+<!-- <style>
+    .card{
+        max-width: 700px;
+    }
+    .container{
+        padding: 20px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="card m-auto">
+            <img class="card-img-top" src="{{blog_post.image.url}}" alt="Blog Image">
+            <div class="card-box-body" my-2>
+                <h2 class="card-title">{{blog_post.title}}</h2>
+                <p class="card-text">{{blog_post.body|safe}}</p>
+                {% if blog_post.author == request.user %}
+                    <a href="{% url 'blog:edit' blog_post.slug %}">Update</a>
+                {% endif %}
+            </div>
+            <div class="card-footer text-muted">
+                Updated on {{blog_post.date_updated}} by {{blog_post.author}}
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <!-- End For Header -->
+        <!-- FOR CARDS -->
+        <!-- For 1st Card -->
+        <div class="col-lg-46 mg-4">
+            <div class="card">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{blog_post.image.url}}" alt="Blog Image">
+                    <h2 class="card-title">{{blog_post.title}}</h2>
+                    <p class="card-text">{{blog_post.body|safe}}</p>
+                    {% if blog_post.author == request.user %}
+                        <a href="{% url 'blog:edit' blog_post.slug %}" class="btn btn-warning">EDIT</a>
+                    {% endif %}
+                    <div class="card-footer text-muted">
+                        Updated on {{blog_post.date_updated}} by {{blog_post.author}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End CARDS -->
+    </div>
+</div>
+
+{% endblock body %}
+
